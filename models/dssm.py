@@ -71,7 +71,7 @@ class DSSM(object):
 
             self._placeholders = {
                 'rec_seqs': tf.placeholder(tf.int32, (None,), name='rec_seqs'),
-                'rel_rec_seqs': tf.placeholder(env('TF_INTX'), ((None,) if loss_type=='dssm_loss' else (None,None)), name='rel_rec_seqs'),
+                'rel_rec_seqs': tf.placeholder(tf.int32, ((None,) if loss_type=='dssm_loss' else (None,None)), name='rel_rec_seqs'),
                 'features': tf.sparse.reorder(tf.sparse_placeholder(tf.float32, name='features')),
 
                 'bn_training': tf.placeholder_with_default(False, shape=(), name='bn_training'),
