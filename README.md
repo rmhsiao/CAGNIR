@@ -4,11 +4,25 @@
 
 CAGNIR applies Graph Attention Networks (GAT) on the Click Graph and extends it with the multi-view attention mechanism. So queries and documents can aggregate relevant information from their neighbors, and the relationship between nodes can be measured from multiple perspectives, results in a more proper and refined way than traditional methods. Through the principle close to pseudo relevance feedback (PRF), CAGNIR can get representation with complete semantics and reduce sparsity in the click log, thereby improving retrieval performance. And finally, given a query, documents are clicked on for it or close to it in the Click Graph will have a better and more reasonable ranking.
 
-### Model Architecture
+**Model Architecture**
 
 | CAGNIR | Click-Attention Graph |
 | ---- | ---- |
 | ![](https://raw.githubusercontent.com/rmhsiao/CAGNIR/demo/CAGNIR.png) | ![](https://raw.githubusercontent.com/rmhsiao/CAGNIR/demo/Click-Attention%20Graph.png) |
+
+**Retrieval Performance**
+
+| Models                                                     | NDCG@1   | NDCG@3   | NDCG@5   | NDCG@10  |
+| ---------------------------------------------------------- | -------- | -------- | -------- | -------- |
+| [VSM](https://dl.acm.org/doi/10.1145/361219.361220) ^a^    | 0.5081 - | 0.4674 - | 0.4399 - | 0.3941 - |
+| VSM ^b^                                                    | 0.5484 - | 0.5260 - | 0.5074 - | 0.4755 - |
+| [DSSM](https://dl.acm.org/doi/10.1145/2505515.2505665) ^a^ | 0.5437 - | 0.5033 - | 0.4740 - | 0.4254 - |
+| [VPCG](https://dl.acm.org/doi/10.1145/2911451.2911531) ^b^ | 0.7195 - | 0.7168 - | 0.7208 - | 0.7337 - |
+| CAGNIR ^a^                                                 | 0.7684   | 0.7622   | 0.7551   | 0.7463   |
+
+*Note.* The dataset [Sogou-QCL](https://dl.acm.org/doi/10.1145/3209978.3210092) is used for experiments, and the results marked with "-" are significantly weaker than CAGNIR at the same position under the Student's Paired t-test (p-value<0.01).
+^a,b^ The vocabularies used for the model are derived respectively from data through [SentencePiece](https://github.com/google/sentencepiece/) (BPE) and [Jieba](https://github.com/fxsjy/jieba).
+
 
 ## File Structure
 
