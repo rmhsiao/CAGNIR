@@ -20,8 +20,7 @@ CAGNIR applies Graph Attention Networks (GAT) on the Click Graph and extends it 
 | [VPCG](https://dl.acm.org/doi/10.1145/2911451.2911531) <sup>b</sup> | 0.7195 - | 0.7168 - | 0.7208 - | 0.7337 - |
 | CAGNIR <sup>a</sup>                                                 | 0.7684   | 0.7622   | 0.7551   | 0.7463   |
 
-*Note.* The dataset [Sogou-QCL](https://dl.acm.org/doi/10.1145/3209978.3210092) is used for experiments, and the results marked with "-" are significantly weaker than CAGNIR at the same position under the Student's Paired t-test (p-value<0.01).
-
+*Note.* The dataset [Sogou-QCL](https://dl.acm.org/doi/10.1145/3209978.3210092) is used for experiments, and the results marked with "-" are significantly weaker than CAGNIR at the same position under the Student's Paired t-test (p-value<0.01). <br />
 <sup>a,b</sup> The vocabularies used for the model are derived respectively from data through [SentencePiece](https://github.com/google/sentencepiece/) (BPE) and [Jieba](https://github.com/fxsjy/jieba).
 
 
